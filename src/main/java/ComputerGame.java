@@ -1,20 +1,15 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-
-
 public class ComputerGame {
-    private static int GameIdCounter;
-    private final int GameId;
-
-    public int getGameId() {
-        return GameId;
-    }
-
+    private static int gameIdCounter;
+    private final int gameId;
     private final ComputerGameParams gameParams;
 
     public ComputerGame(ComputerGameParams gameParams) {
-        this.GameId = ComputerGame.GameIdCounter++;
+        this.gameId = ComputerGame.gameIdCounter++;
         this.gameParams = gameParams;
+    }
+
+    public int getGameId() {
+        return gameId;
     }
 
     public ComputerGameParams getGameParams() {
