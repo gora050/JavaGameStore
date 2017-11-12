@@ -19,6 +19,11 @@ public class ComputerGameParamsTest {
     }
 
     @Test
+    public void TestDescription() throws Exception {
+        assertFalse(someParams.getDescription() == otherParams.getDescription());
+    }
+
+    @Test
     public void filterTest2() throws Exception {
         assertFalse(someParams.filter(otherParams));
     }

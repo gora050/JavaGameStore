@@ -7,15 +7,16 @@ import static org.junit.Assert.assertEquals;
 public class ComputerGameTest {
 
     @Test
-    public void constructorInitialization1() {
+    public void TestComputerGame1() {
         ComputerGame computerGame = new ComputerGame( ComputerGameTestObjects.GameParams1());
         assertFalse(computerGame.getGameParams().filter(ComputerGameTestObjects.GameParams2()));
         assertTrue(computerGame.getGameParams().filter(ComputerGameTestObjects.GameParams1()));
     }
 
     @Test
-    public void constructorInitialization2() {
+    public void TestComputerGame2() {
         ComputerGame computerGame = new ComputerGame(ComputerGameTestObjects.GameParams2());
-        assertEquals(computerGame.getGameId(), 1);
+        ComputerGame computerGame1 = new ComputerGame(ComputerGameTestObjects.GameParams3());
+        assertEquals(computerGame.getGameId(), computerGame1.getGameId()-1);
     }
 }

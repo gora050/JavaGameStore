@@ -10,8 +10,9 @@ public class ComputerGameParams {
     private int price;
     private int ageRestriction;
 
-    public ComputerGameParams(String name, String description, int price, int ageRestriction,
-                              ArrayList<Genre> genres, ArrayList<Platform> platforms) {
+    public ComputerGameParams(String name, String description, int price,
+                              int ageRestriction, ArrayList<Genre> genres,
+                              ArrayList<Platform> platforms) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,13 +22,20 @@ public class ComputerGameParams {
     }
 
     public boolean filter(ComputerGameParams otherParams) {
-        if (!(name.equals(otherParams.getName())) || (price != otherParams.getPrice()) ||
-                (ageRestriction != otherParams.getAgeRestriction()) ||
-                (!(genres.containsAll(otherParams.getGenres())) && otherParams.getGenres().containsAll(genres)) || (!(platforms.containsAll(otherParams.getPlatforms())
+        if (!(name.equals(otherParams.getName()))
+                || (price != otherParams.getPrice())
+                || (ageRestriction != otherParams.getAgeRestriction())
+                || (!(genres.containsAll(otherParams.getGenres()))
+                && otherParams.getGenres().containsAll(genres))
+                || (!(platforms.containsAll(otherParams.getPlatforms())
                 && otherParams.getPlatforms().containsAll(platforms)))) {
             return false;
         }
         return true;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getName() {
